@@ -1,6 +1,9 @@
-# Install Homebrew
+# Install Homebrew (if not already installed) and update/upgrade
 
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+if ! command -v brew &> /dev/null
+then
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
 brew update
 brew upgrade
 
@@ -29,7 +32,6 @@ apps=(
     nmap
     node
     packer
-    perl
     perltidy
     protobuf
     python@3.8
