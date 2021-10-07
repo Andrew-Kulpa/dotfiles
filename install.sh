@@ -9,16 +9,14 @@ DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 [ -d "$DOTFILES_DIR/.git" ] && git --work-tree="$DOTFILES_DIR" --git-dir="$DOTFILES_DIR/.git" pull origin master
 
-# install perlbrew
-\curl -L https://install.perlbrew.pl | bash
-
-# Pick a perl version
-PERL_VERSION=5.34.0
-perlbrew install $PERL_VERSION
-perlbrew switch $PERL_VERSION
-
-# Install cpanm
-curl -L https://cpanmin.us | perl - App::cpanminus
+# install Perl components
+## install cpanminus locally
+curl -L http://cpanmin.us | perl - App::cpanminus
+## add local perl5 bin to PATH
+PATH=$PATH:$HOME/perl5/bin
+## Add local lib run it
+cpanm --local-lib=~/perl5 local::lib
+eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)"
 
 
 if [ "$(uname)" == "Darwin" ]; then
