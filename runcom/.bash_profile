@@ -21,9 +21,11 @@ fi
 
 PATH="$DOTFILES_DIR/bin:$PATH"
 
-
-for DOTFILE in "$DOTFILES_DIR"/system/.{alias,env,functions}; do
+# * order matters
+for DOTFILE in "$DOTFILES_DIR"/system/.{alias,env,functions,source}; do
   [ -f "$DOTFILE" ] && . "$DOTFILE"
 done
 
-
+for LOCAL_DOTFILE in "$HOME"/.local/system/{profile,functions}; do
+  [ -f "$LOCAL_DOTFILE" ] && echo $LOCAL_DOTFILE
+done
