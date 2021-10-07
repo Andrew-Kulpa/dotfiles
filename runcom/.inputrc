@@ -1,0 +1,9 @@
+# Settings that are in the .inputrc file affect all programs that use the GNU readline library, not just bash. 
+# Think of the .inputrc file as being a configuration file for GNU Readline similar to how .bashrc is a configuration file for bash.
+
+# Flip through autocompletion matches with Shift-Tab.
+"\e[Z": menu-complete
+
+# Filtered history search
+"\e[A": history-search-backward
+"\e[B": history-search-forward
