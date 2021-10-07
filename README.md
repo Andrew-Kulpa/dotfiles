@@ -15,9 +15,7 @@ cd dotfiles
 ```
 
 ## Customize
-The following files can be processed from `~/.local/system/` in order:
-- `profile`
-- `functions`
+The `*.sh` files can be automatically executed from `~/.local/system/`.
 
 ## Why `runcom`?
 > [Unix: from runcom files on the CTSS system 1962-63, via the startup script /etc/rc]

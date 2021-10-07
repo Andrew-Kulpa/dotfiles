@@ -26,6 +26,17 @@ for DOTFILE in "$DOTFILES_DIR"/system/.{alias,env,functions,source}; do
   [ -f "$DOTFILE" ] && . "$DOTFILE"
 done
 
-for LOCAL_DOTFILE in "$HOME"/.local/system/{profile,functions}; do
-  [ -f "$LOCAL_DOTFILE" ] && echo $LOCAL_DOTFILE
-done
+# Hook for extra/custom stuff
+DOTFILES_LOCAL_DIR="$HOME/.local"
+
+if [ -d "$DOTFILES_EXTRA_DIR" ]; then
+  for LOCAL_DOTFILE in "$DOTFILES_LOCAL_DIR"/system/*.sh; do
+    [ -f "$LOCAL_DOTFILE" ] && echo $LOCAL_DOTFILE
+  done
+fi
+
+# Clean up
+unset READLINK CURRENT_SCRIPT SCRIPT_PATH DOTFILE EXTRAFILE DOTFILES_LOCAL_DIR
+
+# Export
+export DOTFILES_DIR DOTFILES_EXTRA_DIR
