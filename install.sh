@@ -9,6 +9,16 @@ DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 [ -d "$DOTFILES_DIR/.git" ] && git --work-tree="$DOTFILES_DIR" --git-dir="$DOTFILES_DIR/.git" pull origin master
 
+# install perlbrew
+\curl -L https://install.perlbrew.pl | bash
+
+# Pick a perl version
+PERL_VERSION=5.34.0
+perlbrew install $PERL_VERSION
+perlbrew switch $PERL_VERSION
+
+# Install cpanm
+curl -L https://cpanmin.us | perl - App::cpanminus
 
 
 if [ "$(uname)" == "Darwin" ]; then
