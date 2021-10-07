@@ -24,7 +24,7 @@ if [ "$(uname)" == "Darwin" ]; then
     . "$DOTFILES_DIR/install/brew-cask.sh"
 fi
 
-ln -sv "$DOTFILES_DIR/runcom/.bash_profile" ~
+ln -sv "$DOTFILES_DIR/runcom/.profile" ~
 ln -sv "$DOTFILES_DIR/runcom/.inputrc" ~
 # https://git-scm.com/docs/git-config
 ln -sv "$DOTFILES_DIR/git/.gitconfig" ~
