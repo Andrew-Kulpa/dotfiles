@@ -1,0 +1,21 @@
+[credential]
+    helper = cache
+[user]
+    email = cliff.kulpa@gmail.com
+    name = Andrew Kulpa
+[alias]
+    # Which files are receiving the most "love"
+    churn = !git log --all -M -C --name-only --format='format:' "$@" | sort | grep -v '^$' | uniq -c | sort | awk 'BEGIN {print "count,file"} {print $1 "," $2}'
+    recentchurn = !git log --all -M -C --name-only --since='3 months ago' --format='format:' "$@" | sort | grep -v '^$' | uniq -c | sort | awk 'BEGIN {print "count,file"} {print $1 "," $2}'
+
+[core]
+    ignorecase = false
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+[url "git@gitlab.com:"]
+    insteadOf = https://gitlab.com/
+[url "ssh://git@github.com/"]
+    insteadOf = https://github.com/
