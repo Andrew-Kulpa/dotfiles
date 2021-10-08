@@ -15,7 +15,8 @@ cd dotfiles
 ```
 
 ## Customize
-The `*.sh` files can be automatically executed from `~/.local/system/`.
+- `~/.local/system/*.sh` files are auto-executed at the end of the `.profile` script.
+- A `~/.local/.gitconfig` is auto-included.
 
 ## Why `runcom`?
 > [Unix: from runcom files on the CTSS system 1962-63, via the startup script /etc/rc]
