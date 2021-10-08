@@ -12,4 +12,4 @@ apps=(
     yt-music
 )
 
-brew cask install "${apps[@]}"
+brew install --cask "${apps[@]}"
