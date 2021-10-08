@@ -8,8 +8,12 @@
     churn = !git log --all -M -C --name-only --format='format:' "$@" | sort | grep -v '^$' | uniq -c | sort | awk 'BEGIN {print "count,file"} {print $1 "," $2}'
     recentchurn = !git log --all -M -C --name-only --since='3 months ago' --format='format:' "$@" | sort | grep -v '^$' | uniq -c | sort | awk 'BEGIN {print "count,file"} {print $1 "," $2}'
 
+[include]
+    path = ~/.local/.gitconfig
+
 [core]
     ignorecase = false
+	excludesfile = ~/.gitignore_global
 [filter "lfs"]
     clean = git-lfs clean -- %f
     smudge = git-lfs smudge -- %f
