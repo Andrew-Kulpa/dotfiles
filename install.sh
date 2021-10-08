@@ -24,12 +24,12 @@ if [ "$(uname)" == "Darwin" ]; then
     . "$DOTFILES_DIR/install/brew-cask.sh"
 fi
 
-ln -sv "$DOTFILES_DIR/runcom/.profile" ~
-ln -sv "$DOTFILES_DIR/runcom/.inputrc" ~
-ln -sv "$DOTFILES_DIR/runcom/.bashrc" ~
-ln -sv "$DOTFILES_DIR/runcom/.zshrc" ~
+ln -sfv "$DOTFILES_DIR/runcom/.profile" ~
+ln -sfv "$DOTFILES_DIR/runcom/.inputrc" ~
+ln -sfv "$DOTFILES_DIR/runcom/.bashrc" ~
+ln -sfv "$DOTFILES_DIR/runcom/.zshrc" ~
 # https://git-scm.com/docs/git-config
-ln -sv "$DOTFILES_DIR/git/.gitconfig" ~
+ln -sfv "$DOTFILES_DIR/git/.gitconfig" ~
 # https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
-ln -sv "$DOTFILES_DIR/git/.gitignore_global" ~
+ln -sfv "$DOTFILES_DIR/git/.gitignore_global" ~
 git config --global core.excludesfile ~/.gitignore_global
