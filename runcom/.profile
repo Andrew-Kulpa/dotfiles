@@ -29,9 +29,9 @@ done
 # Hook for extra/custom stuff
 DOTFILES_LOCAL_DIR="$HOME/.local"
 
-if [ -d "$DOTFILES_EXTRA_DIR" ]; then
+if [ -d "$DOTFILES_LOCAL_DIR" ]; then
   for LOCAL_DOTFILE in "$DOTFILES_LOCAL_DIR"/system/*.sh; do
-    [ -f "$LOCAL_DOTFILE" ] && echo $LOCAL_DOTFILE
+    [ -f "$LOCAL_DOTFILE" ] && . "$LOCAL_DOTFILE"
   done
 fi
 
@@ -39,4 +39,4 @@ fi
 unset READLINK CURRENT_SCRIPT SCRIPT_PATH DOTFILE EXTRAFILE DOTFILES_LOCAL_DIR
 
 # Export
-export DOTFILES_DIR DOTFILES_EXTRA_DIR
+export DOTFILES_DIR DOTFILES_LOCAL_DIR
