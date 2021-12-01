@@ -28,6 +28,7 @@ ln -sfv "$DOTFILES_DIR/runcom/.profile" ~
 ln -sfv "$DOTFILES_DIR/runcom/.inputrc" ~
 ln -sfv "$DOTFILES_DIR/runcom/.bashrc" ~
 ln -sfv "$DOTFILES_DIR/runcom/.zshrc" ~
+ln -sfv "$DOTFILES_DIR/runcom/.vimrc" ~
 # https://git-scm.com/docs/git-config
 ln -sfv "$DOTFILES_DIR/git/.gitconfig" ~
 # https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
