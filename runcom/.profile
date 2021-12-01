@@ -35,6 +35,12 @@ if [ -d "$DOTFILES_LOCAL_DIR" ]; then
   done
 fi
 
+if [ "$(uname)" == "Darwin" ]; then
+  export PS1="[%n@%m %1~]$ "
+else
+  export PS1="[\u@\h \W]\\$ "
+fi
+
 # Clean up
 unset READLINK CURRENT_SCRIPT SCRIPT_PATH DOTFILE EXTRAFILE DOTFILES_LOCAL_DIR
 
