@@ -9,7 +9,7 @@ xcode-select --install
 
 ```
 git clone https://github.com/andrew-kulpa/dotfiles.git ~/.dotfiles
-cd dotfiles
+cd ~/.dotfiles
 ./install.sh
 
 ```
