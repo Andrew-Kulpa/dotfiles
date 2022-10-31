@@ -8,11 +8,8 @@ sub_help () {
   echo
   echo "Commands:"
   echo "   clean            Clean up caches (brew, gem)"
-  echo "   dock             Apply macOS Dock settings"
   echo "   edit             Open dotfiles in IDE (code) and Git GUI ($DOTFILES_GIT_GUI)"
   echo "   help             This help message"
-  echo "   macos            Apply macOS system defaults"
-  echo "   test             Run tests"
   echo "   update           Update packages and pkg managers (OS, brew, npm, gem)"
 }
 
@@ -20,28 +17,13 @@ sub_edit () {
   sh -c "code $DOTFILES_DIR"
 }
 
-sub_test () {
-  bats "$DOTFILES_DIR"/test/*.bats
-}
-
 sub_update () {
-  topgrade
+  osx_update.sh
 }
 
 sub_clean () {
   brew cleanup
   gem cleanup
-}
-
-sub_macos () {
-  for DEFAULTS_FILE in "${DOTFILES_DIR}"/macos/defaults*.sh; do
-    echo "Applying ${DEFAULTS_FILE}" && . "${DEFAULTS_FILE}"
-  done
-  echo "Done. Some changes may require a logout/restart to take effect."
-}
-
-sub_dock () {
-  . "${DOTFILES_DIR}/macos/dock.sh" && echo "Dock reloaded."
 }
 
 case $COMMAND_NAME in
@@ -50,7 +32,7 @@ case $COMMAND_NAME in
     ;;
   *)
     shift
-    sub_${COMMAND_NAME} $@
+    sub_"${COMMAND_NAME}" $@
     if [ $? = 127 ]; then
       echo "'$COMMAND_NAME' is not a known command or has errors." >&2
       sub_help
