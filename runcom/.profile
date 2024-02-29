@@ -22,6 +22,7 @@ fi
 # Make utilities available
 
 PATH="$DOTFILES_DIR/bin:$HOME/go/bin:$PATH"
+PATH="$PATH:/opt/homebrew/bin"
 
 # * order matters
 for DOTFILE in "$DOTFILES_DIR"/system/.{alias,env,functions,source}; do
