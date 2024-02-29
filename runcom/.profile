@@ -52,3 +52,5 @@ export DOTFILES_DIR DOTFILES_LOCAL_DIR
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/profile.post.bash" ]] && builtin source "$HOME/.fig/shell/profile.post.bash"
+
+source ~/perl5/perlbrew/etc/bashrc

@@ -9,19 +9,11 @@ DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 [ -d "$DOTFILES_DIR/.git" ] && git --work-tree="$DOTFILES_DIR" --git-dir="$DOTFILES_DIR/.git" pull origin master
 
-# install Perl components
-## install cpanminus locally
-curl -L https://cpanmin.us | perl - App::cpanminus
-## add local perl5 bin to PATH
-PATH=$PATH:$HOME/perl5/bin
-## Add local lib run it
-cpanm --local-lib=~/perl5 local::lib
-eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)"
-
 
 if [ "$(uname)" == "Darwin" ]; then
     . "$DOTFILES_DIR/install/brew.sh"
     . "$DOTFILES_DIR/install/brew-cask.sh"
+    . "$DOTFILES_DIR/install/perlbrew.sh"
 fi
 
 ln -sfv "$DOTFILES_DIR/runcom/.profile" ~
