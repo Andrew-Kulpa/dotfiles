@@ -1,14 +1,22 @@
 # Install cask packages
 
 apps=(
+    apache-directory-studio
+    arc
+    azure-data-studio
+    dbeaver-community
+    background-music
     clickup
-    firefox
-    google-chrome
-    alfred
+    fig
     keka
     macdown
+    maltego
+    ngrok
+    powershell
     visual-studio-code
     vlc
+    wkhtmltopdf
+    xquartz
     yt-music
 )
 

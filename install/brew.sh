@@ -14,33 +14,55 @@ apps=(
     ansible
     awscli
     azure-cli
+    azure/functions/azure-functions-core-tools
+    berkeley-db
     bfg
     cocoapods
     cpanminus
+    diffutils
     docker
     docker-compose
+    docker-machine
+    docutils
+    fbthrift
     freetds
+    gh
     git
     git-filter-repo
     git-lfs
     gitleaks
     go
+    golangci-lint
     graphviz
+    groff
+    guile
+    jpeg
     jq
-    tfsec
+    libgsf
+    libproxy
+    libpthread-stubs
+    microsoft/mssql-release/mssql-tools18
     mysql-client
     nmap
     node
+    openconnect
     packer
+    perlbrew
     perltidy
+    pmd
     protobuf
-    python@3.8
+    pyenv-virtualenv
+    qt
+    scc
+    szip
     terraform
     tflint
+    tfsec
     tree
     vips
     watchman
     wget
+    xmlto
 )
 
 brew install "${apps[@]}"
