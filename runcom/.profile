@@ -21,7 +21,7 @@ fi
 
 # Make utilities available
 
-PATH="$DOTFILES_DIR/bin:$PATH"
+PATH="$DOTFILES_DIR/bin:$HOME/go/bin:$PATH"
 
 # * order matters
 for DOTFILE in "$DOTFILES_DIR"/system/.{alias,env,functions,source}; do
