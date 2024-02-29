@@ -8,8 +8,7 @@ brew update
 brew upgrade
 
 # Install packages
-
-
+## generate new list via `brew leaves`
 apps=(
     ansible
     awscli
@@ -47,8 +46,6 @@ apps=(
     node
     openconnect
     packer
-    perlbrew
-    perltidy
     pmd
     protobuf
     pyenv-virtualenv
