@@ -11,8 +11,11 @@ DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 
 if [ "$(uname)" == "Darwin" ]; then
+    # install brew first
     . "$DOTFILES_DIR/install/brew.sh"
     . "$DOTFILES_DIR/install/brew-cask.sh"
+    # post-brew installs
+    . "$DOTFILES_DIR/install/node.sh"
     . "$DOTFILES_DIR/install/perlbrew.sh"
     . "$DOTFILES_DIR/install/pyenv.sh"
 fi
