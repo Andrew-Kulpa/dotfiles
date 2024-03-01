@@ -21,17 +21,21 @@ else
     perlbrew init
 fi
 
-perlbrew install-cpanm
+# Check if cpanm is installed, and if not, install it
+if ! command -v cpanm &>/dev/null; then
+    echo "cpanm is not installed. Installing cpanm..."
+    perlbrew install-cpanm
+    echo "cpanm installed successfully."
+fi
 
 # setup perl-blead
 if perlbrew list | grep -q "\*"; then
     echo "Perlbrew is enabled and a Perl version is selected."
+else
+    echo "Perlbrew has no Perl version selected."
     echo "Installing perl-blead and switching to it..."
     perlbrew install perl-blead
     perlbrew switch perl-blead
-else
-    echo "Perlbrew is not enabled or no Perl version is selected."
-    echo "Please ensure perlbrew is enabled and a Perl version is selected before running this script."
 fi
 
 # install perl tidy and perl critic
