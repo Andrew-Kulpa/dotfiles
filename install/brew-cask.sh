@@ -14,6 +14,7 @@ apps=(
     lastpass
     macdown
     maltego
+    microsoft-edge
     ngrok
     powershell
     slack
@@ -22,6 +23,7 @@ apps=(
     wkhtmltopdf
     xquartz
     yt-music
+    zoom
 )
 
 brew install --cask "${apps[@]}"
