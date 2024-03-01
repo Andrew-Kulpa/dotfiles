@@ -7,6 +7,7 @@ apps=(
     dbeaver-community
     background-music
     clickup
+    docker
     fig
     keka
     macdown

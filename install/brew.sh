@@ -19,9 +19,6 @@ apps=(
     cocoapods
     cpanminus
     diffutils
-    docker
-    docker-compose
-    docker-machine
     docutils
     fbthrift
     freetds
@@ -51,7 +48,6 @@ apps=(
     pyenv-virtualenv
     qt
     scc
-    szip
     terraform
     tflint
     tfsec
