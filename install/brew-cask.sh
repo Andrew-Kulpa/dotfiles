@@ -9,7 +9,9 @@ apps=(
     clickup
     docker
     fig
+    google-drive
     keka
+    lastpass
     macdown
     maltego
     ngrok
