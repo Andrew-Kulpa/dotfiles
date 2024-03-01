@@ -13,6 +13,7 @@ apps=(
     maltego
     ngrok
     powershell
+    slack
     visual-studio-code
     vlc
     wkhtmltopdf
