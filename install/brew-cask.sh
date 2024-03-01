@@ -4,9 +4,9 @@ apps=(
     apache-directory-studio
     arc
     azure-data-studio
-    dbeaver-community
     background-music
     clickup
+    dbeaver-community
     docker
     fig
     google-drive
