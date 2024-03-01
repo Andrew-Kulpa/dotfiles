@@ -25,4 +25,8 @@ ln -sfv "$DOTFILES_DIR/runcom/.vimrc" ~
 ln -sfv "$DOTFILES_DIR/git/.gitconfig" ~
 # https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
 ln -sfv "$DOTFILES_DIR/git/.gitignore_global" ~
-git config --global core.excludesfile ~/.gitignore_global
+
+if ! git config --global --get core.excludesfile >/dev/null; then
+    echo "Setting core.excludesfile in global Git configuration..."
+    git config --global core.excludesfile ~/.gitignore_global
+fi
