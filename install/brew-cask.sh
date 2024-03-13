@@ -8,7 +8,6 @@ apps=(
     clickup
     dbeaver-community
     docker
-    fig
     google-drive
     keka
     lastpass
